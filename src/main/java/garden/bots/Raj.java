@@ -40,7 +40,7 @@ public class Raj extends AbstractVerticle {
     router.route().handler(BodyHandler.create());
     
     router.get("/talk").handler(context -> {
-      // knock knock knock Penny
+
       discovery.getRecord(rec -> rec.getName().equals("leonard"), asyncRecord -> {
         if(asyncRecord.succeeded()) {
   
