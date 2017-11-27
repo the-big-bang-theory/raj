@@ -48,11 +48,11 @@ public class Raj extends AbstractVerticle {
           WebClient leonardClient = reference.getAs(WebClient.class);
   
           leonardClient.get(asyncRecord.result().getLocation().getString("endpoint")).send(asyncGetResult -> {
-            String pennysResponse = asyncGetResult.result().bodyAsJsonObject().encodePrettily();
+            String leonardsResponse = asyncGetResult.result().bodyAsJsonObject().encodePrettily();
             
             context.response()
               .putHeader("content-type", "application/json;charset=UTF-8")
-              .end(pennysResponse);
+              .end(leonardsResponse);
           });
           
           
